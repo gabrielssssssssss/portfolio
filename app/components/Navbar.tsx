@@ -1,11 +1,16 @@
-import React from 'react'
+import React from 'react';
+import Link from 'next/link';
 
 export default function Navbar() {
   return (
-    <nav className="px-6 py-4 flex items-center">
-      <button className="">/</button>
-      <button>projets</button>
-      <button>contact</button>
+    <nav className="flex flex-col max-w-4xl mx-auto">
+      <div className="flex items-center justify-between text-[#D4D4D8]  mt-10 text-sm">
+        <a type="button" href="">/</a>
+        <div className="space-x-6">
+          <a type="button" href="">projets</a>
+          <a type="button" href="">contact</a>
+        </div>
+      </div>
     </nav>
   )
 }

@@ -1,16 +1,24 @@
-import Timer from "./components/Timer"
-import Stack from "./components/Stack"
-import Card from "./components/Card"
-import Music from "./components/Music"
-import Footer from "./components/Footer";
+import Timer from "./components/Timer";
+import Stack from "./components/Stack";
+import Card from "./components/Card";
+import Music from "./components/Music";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Portfolio de Gabriel – Développeur & Passionné de Cybersécurité",
+  description:
+    "Découvrez mon portfolio : projets en cybersécurité, développement Web et mobile, outils d'automatisation et explorations en IA/ML.",
+  keywords:
+    "Gabriel, portfolio, développeur, cybersécurité, Golang, Python, Rust, React, DevSecOps, OSINT, outils sécurité, web3, IA, machine learning",
+};
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen px-8 pt-12 max-w-3xl mx-auto">
-      <h1 className="text-white text-4xl font-sans font-bold mb-1">
+      <h1 className="text-white text-4xl font-bold mb-1">
         Gabriel Zzzzz
       </h1>
-      <h2 className="text-gray-300 font-sans mb-6">
+      <h2 className="text-gray-300 mb-6">
         (He/Him) • 16y/o Développeur, France • <Timer />
       </h2>
       <p className="text-zinc-300 text-sm leading-relaxed mb-6 [max-width:70ch]">
