@@ -65,20 +65,23 @@ export default function Stack() {
     };
 
     return (
-        <>
-            <div className="grid h-40 grid-cols-5 content-center gap-2">
-                {Object.entries(stacks).length > 0 &&
-                    Object.entries(stacks).map(([key, value]) => {
-                    return (
-                        <div key={key}> 
-                            <a type="button" target="_blank" rel="noopener noreferrer" href={value["Redirect"]} className="flex items-center gap-2 cursor-pointer text-white bg-[#18181b] hover:bg-white-900 font-medium rounded-md text-xs px-3 py-1.5 me-2 mb-2">
-                            {parse(value["Icon"])}
-                            {key}
-                            </a>
-                        </div>
-                );
-                })}
-            </div>
-        </>
+    <div className="flex flex-wrap gap-3 mb-6">
+        {Object.entries(stacks).length > 0 &&
+        Object.entries(stacks).map(([key, value]) => {
+            return (
+            <a
+                key={key}
+                type="button"
+                target="_blank"
+                rel="noopener noreferrer"
+                href={value["Redirect"]}
+                className="flex items-center gap-2 cursor-pointer text-white bg-[#18181b] hover:bg-zinc-800 font-medium rounded-md text-xs px-3 py-1.5"
+            >
+                {parse(value["Icon"])}
+                {key}
+            </a>
+            );
+        })}
+    </div>
     );
 }
