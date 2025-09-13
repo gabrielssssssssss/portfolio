@@ -1,5 +1,6 @@
 export default function Footer() {
   return (
+    <div className="flex flex-col px-8  max-w-3xl mx-auto">
     <footer className="mt-auto pb-3">
       <div className="h-px my-4 dark:bg-[#18181b]"></div>
       <div>
@@ -16,5 +17,6 @@ export default function Footer() {
         </div>
       </div>
     </footer>
+    </div>
   );
 }

@@ -50,7 +50,6 @@ export default function Home() {
         Spotify.
       </p>
       <Music/>
-      <Footer/>
     </div>
   )
 }

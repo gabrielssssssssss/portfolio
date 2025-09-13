@@ -122,7 +122,7 @@ export default function Music() {
     }
 
     function ShuffleDictionary<T extends Record<string, unknown>>(obj: T): T {
-        return Object.fromEntries(ShuffleList(Object.entries(obj)).slice(0,6)) as T
+        return Object.fromEntries(ShuffleList(Object.entries(obj)).slice(0,7)) as T
     }
 
     return (
