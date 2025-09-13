@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@fontsource/space-grotesk": "^5.2.9",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.23.12",
     "html-react-parser": "^5.2.6",
     "lodash": "^4.17.21",
     "next": "15.5.3",
