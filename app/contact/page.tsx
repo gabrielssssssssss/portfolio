@@ -8,6 +8,7 @@ export default function Contact() {
     const [email, setEmail] = useState("");
     const [content, setContent] = useState("");
     const [state, setState] = useState(false);
+    const [mailto, setMailTo] = useState(process.env.NEXT_PUBLIC_SITE_MAIL_RECIEVER);
 
     useEffect(() => {
         if (state && email != "" && content != "" && name != "") {
@@ -18,12 +19,12 @@ export default function Contact() {
                         setName("");
                         setEmail("");
                         setContent("");
-                        return true
+                        return true;
                     }
-                    return false
+                    return false;
                 })
             };
-            callback()
+            callback();
         }
     }, [state]);
 
@@ -34,8 +35,8 @@ export default function Contact() {
             </h1>
             <p className="max-w-[60ch]">
                 Si vous souhaitez me contacter pour quelque raison que ce soit (collaboration, recrutement, question…), remplissez le formulaire ci-dessous ou écrivez-moi directement à :{" "}
-                <a href="mailto:gabriel@email.dev" className="font-bold">
-                    gabriel@email.dev
+                <a href={`mailto:${mailto}`}  className="font-bold">
+                    {mailto}
                 </a>
             </p>
 
@@ -46,7 +47,7 @@ export default function Contact() {
 
                 <div className="flex flex-col md:flex-row md:space-x-6 space-y-6 md:space-y-0 mb-7">
                     <div className="w-full">
-                        <p className="text-gray-300 text-sm mb-2">Votre prénom*</p>
+                        <p className="text-gray-300 text-sm mb-2">* Votre prénom</p>
                         <div className="flex h-[44px] text-[14px] text-white/60 w-full items-center bg-[#09090b] border border-white/10 rounded-lg px-3">
                             <input
                                 required
@@ -60,7 +61,7 @@ export default function Contact() {
                     </div>
 
                     <div className="w-full">
-                        <p className="text-gray-300 text-sm mb-2">Votre adresse e-mail*</p>
+                        <p className="text-gray-300 text-sm mb-2">* Votre adresse e-mail</p>
                         <div className="flex h-[44px] text-[14px] text-white/60 w-full items-center bg-[#09090b] border border-white/10 rounded-lg px-3">
                             <input
                                 required
@@ -75,7 +76,7 @@ export default function Contact() {
                 </div>
 
                 <div className="w-full mb-6">
-                    <p className="text-gray-300 text-sm mb-2">Que voulez-vous envoyer comme message ?*</p>
+                    <p className="text-gray-300 text-sm mb-2">* Que voulez-vous envoyer comme message ?</p>
                     <div className="flex text-[16px] text-white/60 w-full bg-[#09090b] border border-white/10 rounded-lg px-3 py-2">
                         <textarea
                             required
