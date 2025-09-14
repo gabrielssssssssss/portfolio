@@ -1,16 +1,28 @@
 "use client"
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FadeUp } from "../components/FadeUp";
 import { AnimatedSubscribeButton } from "../components/Button";
 import Mailer from './utils/Mailer';
 
 export default function Contact() {
-    const response = async() => {
-        await Mailer({EmailTo: "test@example.com", Message: "yoyoyo"})
-    }
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [content, setContent] = useState("");
+    const [state, setState] = useState(false);
+
+    useEffect(() => {
+        if (state) {
+            async function callback() {
+                await Mailer({EmailTo: email, Message: content}).then((val) => {
+                    console.log(val)
+                })
+            };
+            callback();
+        }
+    }, [state])
 
     return (
-        <FadeUp as="div" className="flex flex-col min-h-screen px-4 sm:px-8 pt-12 max-w-3xl mx-auto">
+        <div className="flex flex-col min-h-screen px-4 sm:px-8 pt-12 max-w-3xl mx-auto">
             <h1 className="text-white text-2xl font-bold mb-1">
                 Me contactez ?
             </h1>
@@ -35,6 +47,7 @@ export default function Contact() {
                                 className="bg-transparent text-[#f4f4f5] focus:outline-none w-full"
                                 type="text"
                                 placeholder="John Doe"
+                                onChange={(value) => setName(value.target.value)}
                             />
                         </div>
                     </div>
@@ -47,6 +60,7 @@ export default function Contact() {
                                 className="bg-transparent text-[#f4f4f5] focus:outline-none w-full"
                                 type="email"
                                 placeholder="john-doe@example.com"
+                                onChange={(value) => setEmail(value.target.value)}
                             />
                         </div>
                     </div>
@@ -59,15 +73,16 @@ export default function Contact() {
                             required
                             className="bg-transparent text-[#f4f4f5] focus:outline-none w-full resize-none min-h-[140px]"
                             placeholder="Écrivez votre message ici..."
+                            onChange={(value) => setContent(value.target.value)}
                         />
                     </div>
                 </div>
 
-                <AnimatedSubscribeButton className="flex bg-[#09090b] text-white border border-white/10 hover:white/60 w-full justify-center py-3 rounded-lg">
+                <AnimatedSubscribeButton onClick={() => setState(true)} className="flex bg-[#09090b] text-white border border-white/10 hover:white/60 w-full justify-center py-3 rounded-lg">
                     <span>Envoyer</span>
                     <span>Mail envoyé avec succès!</span>
                 </AnimatedSubscribeButton>
             </div>
-        </FadeUp>
+        </div>
     )
 }
