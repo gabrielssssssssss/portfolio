@@ -1,73 +1,73 @@
-import React from 'react';
+"use client"
+import React, { useEffect } from 'react';
+import { FadeUp } from "../components/FadeUp";
+import { AnimatedSubscribeButton } from "../components/Button";
+import Mailer from './utils/Mailer';
 
 export default function Contact() {
+    const response = async() => {
+        await Mailer({EmailTo: "test@example.com", Message: "yoyoyo"})
+    }
+
     return (
-        <div className="flex flex-col min-h-screen px-8 pt-12 max-w-3xl mx-auto">
+        <FadeUp as="div" className="flex flex-col min-h-screen px-4 sm:px-8 pt-12 max-w-3xl mx-auto">
             <h1 className="text-white text-2xl font-bold mb-1">
-                    Me contactez ?
+                Me contactez ?
             </h1>
-            <p className="[max-width:60ch]">Si vous souhaitez me contacter pour quelque raison que ce soit (collaboration, recrutement, question…), remplissez le formulaire ci-dessous ou écrivez-moi directement à : <a href="mailto:gabriel@email.dev" className="font-bold">gabriel@email.dev</a></p>
+            <p className="max-w-[60ch]">
+                Si vous souhaitez me contacter pour quelque raison que ce soit (collaboration, recrutement, question…), remplissez le formulaire ci-dessous ou écrivez-moi directement à :{" "}
+                <a href="mailto:gabriel@email.dev" className="font-bold">
+                    gabriel@email.dev
+                </a>
+            </p>
 
-            <div className="max-w-xl p-3 bg-white border-gray-200 rounded-lg mt-7 shadow-sm dark:bg-[#18181b]">
+            <div className="w-full p-6 sm:p-8 bg-white border-gray-200 rounded-lg mt-7 shadow-sm dark:bg-[#18181b]">
                 <div className="flex justify-between items-center">
-                    <h1 className="text-white text-lg font-semibold mb-2">Formulaire d’envoie de mail</h1>
+                    <h1 className="text-white text-lg font-semibold mb-6">Formulaire d’envoi de mail</h1>
                 </div>
 
-                <div className="flex items-stretch space-x-18 mb-7">
-                    <div className="w-full max-w-sm min-w-[200px]">
+                <div className="flex flex-col md:flex-row md:space-x-6 space-y-6 md:space-y-0 mb-7">
+                    <div className="w-full">
                         <p className="text-gray-300 text-sm mb-2">Votre prénom*</p>
-                        <div
-                        className="flex h-[34px] text-[14px] text-white/60 w-[240px] items-center bg-[#09090b] border border-white/10 rounded-lg focus-within:ring-2 focus-within:ring-gray-700 focus-within:ring-offset-2 focus-within:ring-offset-[#09090b] transition-all duration-150 ease-in-out"
-                        >
-                        <input
-                            required
-                            className="bg-transparent text-[#f4f4f5] px-3 py-1 rounded-l-lg focus:outline-none w-full"
-                            pattern="^[0-9,]*$"
-                            id="currency-input"
-                            name="text"
-                            type="text"
-                            placeholder="John Doe"
-                        />
+                        <div className="flex h-[44px] text-[14px] text-white/60 w-full items-center bg-[#09090b] border border-white/10 rounded-lg px-3">
+                            <input
+                                required
+                                className="bg-transparent text-[#f4f4f5] focus:outline-none w-full"
+                                type="text"
+                                placeholder="John Doe"
+                            />
                         </div>
                     </div>
-                    
-                    <div className="w-full max-w-sm min-w-[200px]">
+
+                    <div className="w-full">
                         <p className="text-gray-300 text-sm mb-2">Votre adresse e-mail*</p>
-                        <div
-                        className="flex h-[34px] text-[14px] text-white/60 w-[240px] items-center bg-[#09090b] border border-white/10 rounded-lg focus-within:ring-2 focus-within:ring-gray-700 focus-within:ring-offset-2 focus-within:ring-offset-[#09090b] transition-all duration-150 ease-in-out"
-                        >
-                        <input
-                            required
-                            className="bg-transparent text-[#f4f4f5] px-3 py-1 rounded-l-lg focus:outline-none w-full"
-                            pattern="^[0-9,]*$"
-                            id="currency-input"
-                            name="text"
-                            type="text"
-                            placeholder="john-doe@example.com"
-                        />
+                        <div className="flex h-[44px] text-[14px] text-white/60 w-full items-center bg-[#09090b] border border-white/10 rounded-lg px-3">
+                            <input
+                                required
+                                className="bg-transparent text-[#f4f4f5] focus:outline-none w-full"
+                                type="email"
+                                placeholder="john-doe@example.com"
+                            />
                         </div>
                     </div>
                 </div>
-                
-                <div className="w-full max-w-xl min-w-[300px] mb-6">
+
+                <div className="w-full mb-6">
                     <p className="text-gray-300 text-sm mb-2">Que voulez-vous envoyer comme message ?*</p>
-                    <div
-                        className="flex text-[16px] text-white/60 w-full bg-[#09090b] border border-white/10 rounded-lg focus-within:ring-2 focus-within:ring-gray-700 focus-within:ring-offset-2 focus-within:ring-offset-[#09090b] transition-all duration-150 ease-in-out"
-                    >
+                    <div className="flex text-[16px] text-white/60 w-full bg-[#09090b] border border-white/10 rounded-lg px-3 py-2">
                         <textarea
                             required
-                            className="bg-transparent text-[#f4f4f5] px-4 py-3 rounded-lg focus:outline-none w-full resize-none min-h-[120px]"
-                            id="message-input"
-                            name="message"
+                            className="bg-transparent text-[#f4f4f5] focus:outline-none w-full resize-none min-h-[140px]"
                             placeholder="Écrivez votre message ici..."
                         />
                     </div>
                 </div>
 
-                <footer className="font-medium text-zinc-200 text-xs leading-relaxed [max-width:70ch] mb-2">
-                    En cas de problème contactez moi manuellement via mon adresse e-mail !
-                </footer>
+                <AnimatedSubscribeButton className="flex bg-[#09090b] text-white border border-white/10 hover:white/60 w-full justify-center py-3 rounded-lg">
+                    <span>Envoyer</span>
+                    <span>Mail envoyé avec succès!</span>
+                </AnimatedSubscribeButton>
             </div>
-        </div>
+        </FadeUp>
     )
 }
