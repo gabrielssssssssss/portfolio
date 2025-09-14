@@ -43,6 +43,7 @@ export default function Contact() {
             <div className="w-full p-6 sm:p-8 bg-white border-gray-200 rounded-lg mt-7 shadow-sm dark:bg-[#18181b]">
                 <div className="flex justify-between items-center">
                     <h1 className="text-white text-lg font-semibold mb-6">Formulaire d’envoi de mail</h1>
+                    {/* <h1 className="text-white text-lg font-semibold mb-6">Restant 1/2</h1> */}
                 </div>
 
                 <div className="flex flex-col md:flex-row md:space-x-6 space-y-6 md:space-y-0 mb-7">
@@ -92,6 +93,14 @@ export default function Contact() {
                     <span>Envoyer</span>
                     <span>Mail envoyé avec succès !</span>
                 </AnimatedSubscribeButton>
+                <footer>
+                    <p className="text-gray-300 text-xs mt-5">
+                        En cas de problème ou si vous ne recevez pas de réponse, vous pouvez me contacter directement à :{" "}
+                        <a href={`mailto:${mailto}`} className="font-bold">
+                            {mailto}
+                        </a>
+                    </p>
+                </footer>
             </div>
         </div>
     )
