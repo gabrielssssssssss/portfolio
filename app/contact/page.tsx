@@ -1,6 +1,5 @@
 "use client"
 import React, { useEffect, useState } from 'react';
-import { FadeUp } from "../components/FadeUp";
 import { AnimatedSubscribeButton } from "../components/Button";
 import Mailer from './utils/Mailer';
 
@@ -11,15 +10,22 @@ export default function Contact() {
     const [state, setState] = useState(false);
 
     useEffect(() => {
-        if (state) {
+        if (state && email != "" && content != "" && name != "") {
+            setState(false);
             async function callback() {
-                await Mailer({EmailTo: email, Message: content}).then((val) => {
-                    console.log(val)
+                await Mailer({Name: name, EmailTo: email, Message: content}).then((val) => {
+                    if (val) {
+                        setName("");
+                        setEmail("");
+                        setContent("");
+                        return true
+                    }
+                    return false
                 })
             };
-            callback();
+            callback()
         }
-    }, [state])
+    }, [state]);
 
     return (
         <div className="flex flex-col min-h-screen px-4 sm:px-8 pt-12 max-w-3xl mx-auto">
@@ -47,6 +53,7 @@ export default function Contact() {
                                 className="bg-transparent text-[#f4f4f5] focus:outline-none w-full"
                                 type="text"
                                 placeholder="John Doe"
+                                value={name}
                                 onChange={(value) => setName(value.target.value)}
                             />
                         </div>
@@ -57,6 +64,7 @@ export default function Contact() {
                         <div className="flex h-[44px] text-[14px] text-white/60 w-full items-center bg-[#09090b] border border-white/10 rounded-lg px-3">
                             <input
                                 required
+                                value={email}
                                 className="bg-transparent text-[#f4f4f5] focus:outline-none w-full"
                                 type="email"
                                 placeholder="john-doe@example.com"
@@ -71,6 +79,7 @@ export default function Contact() {
                     <div className="flex text-[16px] text-white/60 w-full bg-[#09090b] border border-white/10 rounded-lg px-3 py-2">
                         <textarea
                             required
+                            value={content}
                             className="bg-transparent text-[#f4f4f5] focus:outline-none w-full resize-none min-h-[140px]"
                             placeholder="Écrivez votre message ici..."
                             onChange={(value) => setContent(value.target.value)}
@@ -80,7 +89,7 @@ export default function Contact() {
 
                 <AnimatedSubscribeButton onClick={() => setState(true)} className="flex bg-[#09090b] text-white border border-white/10 hover:white/60 w-full justify-center py-3 rounded-lg">
                     <span>Envoyer</span>
-                    <span>Mail envoyé avec succès!</span>
+                    <span>Mail envoyé avec succès !</span>
                 </AnimatedSubscribeButton>
             </div>
         </div>
