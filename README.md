@@ -1,10 +1,11 @@
 <h1 align="center">🌐 Portfolio - Gabriel Zzzzz</h1>
 
 <div align='center'>
-
+  
 [![Next.JS](https://img.shields.io/badge/Next.JS-SSR-874fff?logo=nextdotjs&style=flat)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-UI-61DBFB?logo=react&style=flat)](https://react.dev/)
 [![TailwindCSS](https://img.shields.io/badge/Tailwind-CSS-38B2AC?logo=tailwindcss&style=flat)](https://tailwindcss.com/)
+[![Prisma](https://img.shields.io/badge/Prisma-ORM-2D3748?logo=prisma&style=flat)](https://www.prisma.io/)
 [![Hosted on Vercel](https://img.shields.io/badge/Vercel-Démo-black?logo=vercel&style=flat)](https://sitecool.com)
 
 </div>
