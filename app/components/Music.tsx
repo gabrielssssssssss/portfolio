@@ -17,7 +17,7 @@ export default function Music() {
             const response = await GET_MUSIC();
             setMusic(response);
         }
-        callback()
+        callback();
     }, [])
 
     return (

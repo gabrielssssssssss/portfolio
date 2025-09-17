@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     "Gabriel, portfolio, développeur, cybersécurité, Golang, Python, Rust, React, DevSecOps, OSINT, outils sécurité, web3, IA, machine learning",
 };
 
-export default async function Home() {
+export default function Home() {
   return (
     <FadeUp as="div" className="flex flex-col min-h-screen px-8 pt-12 max-w-3xl mx-auto">
       <h1 className="text-white text-4xl font-bold mb-1">

@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from 'react';
 import { AnimatedSubscribeButton } from "../components/Button";
 import Mailer from './utils/Mailer';
-import { FadeUp } from "../components/FadeUp";
 
 export default function Contact() {
     const [name, setName] = useState("");
@@ -30,7 +29,7 @@ export default function Contact() {
     }, [state]);
 
     return (
-        <FadeUp as="div" className="flex flex-col min-h-screen px-4 sm:px-8 pt-12 max-w-3xl mx-auto">
+        <div className="flex flex-col min-h-screen px-4 sm:px-8 pt-12 max-w-3xl mx-auto">
             <h1 className="text-white text-2xl font-bold mb-1">
                 Me contactez ?
             </h1>
@@ -44,6 +43,7 @@ export default function Contact() {
             <div className="w-full p-6 sm:p-8 bg-white border-gray-200 rounded-lg mt-7 shadow-sm dark:bg-[#18181b]">
                 <div className="flex justify-between items-center">
                     <h1 className="text-white text-lg font-semibold mb-6">Formulaire d’envoi de mail</h1>
+                    {/* <h1 className="text-white text-lg font-semibold mb-6">Restant 1/2</h1> */}
                 </div>
 
                 <div className="flex flex-col md:flex-row md:space-x-6 space-y-6 md:space-y-0 mb-7">
@@ -102,6 +102,6 @@ export default function Contact() {
                     </p>
                 </footer>
             </div>
-        </FadeUp>
+        </div>
     )
 }
