@@ -1,36 +1,100 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<h1 align="center">🌐 Portfolio - Gabriel Zzzzz</h1>
 
-## Getting Started
+<div align='center'>
 
-First, run the development server:
+[![Next.JS](https://img.shields.io/badge/Next.JS-SSR-874fff?logo=nextdotjs&style=flat)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-UI-61DBFB?logo=react&style=flat)](https://react.dev/)
+[![TailwindCSS](https://img.shields.io/badge/Tailwind-CSS-38B2AC?logo=tailwindcss&style=flat)](https://tailwindcss.com/)
+[![Hosted on Vercel](https://img.shields.io/badge/Vercel-Démo-black?logo=vercel&style=flat)](https://sitecool.com)
 
+</div>
+
+<h4 align="center">✨ Mon espace personnel pour présenter mon parcours, mes projets et mes passions 🚀</h4>
+
+<div align="center">
+  - Développé avec Next.js, React et Tailwind CSS -
+  <br/>
+  <sup><sub>Déployé sur Vercel ☁️</sub></sup>
+</div>
+
+---
+
+## ✨ Fonctionnalités
+
+- 🏠 Page d’accueil avec présentation
+- 📬 Section contact (/contact)
+- 📝 Section articles/posts (/posts)
+- 🎨 Design responsive avec Tailwind CSS
+- 🚀 Déploiement rapide et optimisé sur Vercel
+
+---
+
+## 🛠️ Installation & Utilisation
+
+### Cloner le dépôt
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/gabrielssssssssss/portfolio.git
+cd portfolio
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installer les dépendances
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Lancer le serveur de développement
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Le projet sera disponible sur 👉 [http://localhost:3000](http://localhost:3000)
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🌍 Démo en ligne
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+➡️ [sitecool.com](https://....com)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 📖 À propos de moi
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Gabriel Zzzzz**  
+(He/Him) • 16 ans • Développeur, France  
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Je suis développeur système depuis plus de 3 ans et actuellement étudiant en cybersécurité.  
+Je développe des applications Web et Mobile orientées sécurité, et je consacre mon temps libre à résoudre des katas sur Codewars.  
+
+Passionné par la **technologie**, la **mode** et la **musique**, j’aspire à devenir **Malware Analyst** ou à évoluer dans l’**IA/ML**.
+
+---
+
+## 🧑‍💻 Tech Stack
+
+- **Langages** : Python, Golang, JavaScript, TypeScript, SQL  
+- **Frameworks** : React, Next.js, Tailwind CSS  
+- **Outils** : Git, GitHub, VSCode, Vercel, Codewars  
+
+---
+
+## 📬 Contact
+
+- **Nom** : Gabriel
+- **Email** : 974gabriel.contact@gmail.com
+- **GitHub** : https://github.com/gabrielssssssssss/
+
+---
+
+## 📜 Licence
+
+Ce projet est sous licence **MIT**.  
+Vous pouvez l’utiliser, le modifier et le redistribuer librement.
+
+---
+
+<div align="center">
+
+✨ Merci d’avoir pris le temps de découvrir mon portfolio !  
+Si le projet vous plaît, n’hésitez pas à laisser une ⭐ sur le repo 💜
+
+</div>
