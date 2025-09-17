@@ -1,15 +1,28 @@
-import React from 'react';
+"use client"
+import React, { useEffect, useState } from 'react';
+import {GET_PROJECT} from "@/utils/actions";
+import { JsonValue } from '@prisma/client/runtime/library';
 
 export default function Card() {
-    const projects = {
-        "portfolio": {
-            "Title": "Portfolio",
-            "Description": "Portfolio personnel développé avec Next.js, intégrant plusieurs fonctionnalités variées.",
-            "Technologies": ["Next.JS", "TypesScript", "Tailwind CSS", "Vercel"],
-            "Repositories": "https://github.com/gabrielzzzzzzzzz/portfolio",
+    const [projects, setProjects] = useState<{
+        name: string;
+        id: string;
+        title: string;
+        description: string;
+        technologies: JsonValue;
+        repositories: string;
+    }[]>([]);
+
+    useEffect(()=> {
+        const callback = async() => {
+            const response = await GET_PROJECT()
+            setProjects(response);
         }
-    };
-    
+        callback();
+    }, [])
+
+    console.log(projects);
+
     return (
         <div className="grid h-40">
             {Object.entries(projects).length > 0 &&
@@ -18,7 +31,7 @@ export default function Card() {
                     <div key={key}> 
                         <div className="max-w-xl p-3 bg-white border-gray-200 rounded-lg shadow-sm dark:bg-[#18181b]">
                             <div className="flex justify-between items-center">
-                                <h1 className="text-white text-lg font-semibold mb-2">{value["Title"]}</h1>
+                                <h1 className="text-white text-lg font-semibold mb-2">{value["title"]}</h1>
                                 <a
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -42,9 +55,9 @@ export default function Card() {
                                 </svg>
                                 </a>
                             </div>
-                            <p className="text-zinc-300 text-sm leading-relaxed [max-width:70ch] mb-4">{value["Description"]}</p>
+                            <p className="text-zinc-300 text-sm leading-relaxed [max-width:70ch] mb-4">{value["description"]}</p>
                             <footer className="font-medium text-zinc-200 text-xs leading-relaxed [max-width:70ch] mb-2">
-                                {value["Technologies"].map((technologie) =>
+                                {(value["technologies"] as string[]).map((technologie) =>
                                     technologie + " "
                                 )}
                             </footer>

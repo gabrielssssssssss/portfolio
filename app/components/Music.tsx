@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import {GET_MUSIC} from "@/utils/actions";
+import {ShuffleDictionary} from "@/app/utils/Shuffle";
 
 export default function Music() {
     const [music, setMusic] = useState<{
@@ -18,18 +19,6 @@ export default function Music() {
         }
         callback()
     }, [])
-
-    function ShuffleList<T>(array: T[]): T[] {
-        for (let i = array.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1))
-            ;[array[i], array[j]] = [array[j], array[i]]
-        }
-        return array
-    }
-
-    function ShuffleDictionary<T>(obj: T[]): T[] {
-        return ShuffleList([...obj]).slice(0, 7)
-    }
 
     return (
         <div className="mt-3">

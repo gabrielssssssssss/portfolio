@@ -11,3 +11,8 @@ export async function GET_MUSIC() {
   const data = await prisma.music.findMany()
   return data;
 }
+
+export async function GET_PROJECT() {
+  const data = await prisma.project.findMany()
+  return data
+}
