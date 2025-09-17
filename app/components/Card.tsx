@@ -15,13 +15,11 @@ export default function Card() {
 
     useEffect(()=> {
         const callback = async() => {
-            const response = await GET_PROJECT()
+            const response = await GET_PROJECT();
             setProjects(response);
         }
         callback();
     }, [])
-
-    console.log(projects);
 
     return (
         <div className="grid h-40">

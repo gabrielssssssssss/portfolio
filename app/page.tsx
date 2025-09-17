@@ -4,8 +4,6 @@ import Card from "./components/Card";
 import Music from "./components/Music";
 import { Metadata } from "next";
 import { FadeUp } from "./components/FadeUp";
-import {GET} from "../utils/actions";
-import machine from "./utils/GetStack";
 
 export const metadata: Metadata = {
   title: "Portfolio de Gabriel – Développeur & Passionné de Cybersécurité",
@@ -15,9 +13,7 @@ export const metadata: Metadata = {
     "Gabriel, portfolio, développeur, cybersécurité, Golang, Python, Rust, React, DevSecOps, OSINT, outils sécurité, web3, IA, machine learning",
 };
 
-
 export default async function Home() {
-  // {console.log(GET())}
   return (
     <FadeUp as="div" className="flex flex-col min-h-screen px-8 pt-12 max-w-3xl mx-auto">
       <h1 className="text-white text-4xl font-bold mb-1">
